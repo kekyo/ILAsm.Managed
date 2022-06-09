@@ -4,8 +4,9 @@ Portable managed Mono IL assembler.
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-* [![NuGet ILAsm.Managed](https://img.shields.io/nuget/v/ILAsm.Managed.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed)
-* [![NuGet ILAsm.Managed.Core](https://img.shields.io/nuget/v/ILAsm.Managed.Core.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed.Core)
+| ILAsm.Managed | ILAsm.Managed.Core |
+|:----|:----|
+| [![NuGet ILAsm.Managed](https://img.shields.io/nuget/v/ILAsm.Managed.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed) | [![NuGet ILAsm.Managed.Core](https://img.shields.io/nuget/v/ILAsm.Managed.Core.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed.Core) |
 
 ----
 
