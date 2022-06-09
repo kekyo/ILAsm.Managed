@@ -6,6 +6,7 @@
 
     <AssemblyName>ilasm</AssemblyName>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <NuSpecFile>ILAsm.Managed.nuspec</NuSpecFile>
 
     <NoWarn>$(NoWarn);1591;1587;1570;1572;1573</NoWarn>
   </PropertyGroup>

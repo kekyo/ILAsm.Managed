@@ -13,5 +13,5 @@ echo "Build ILAsm.Managed"
 echo
 
 dotnet clean
-dotnet build -p:Configuration=Release -p:Platform=AnyCPU ILAsm.Managed.sln
-dotnet pack -p:Configuration=Release -p:Platform=AnyCPU -o artifacts ILAsm.Managed.sln
+dotnet build -p:Configuration=Release ILAsm.Managed.sln
+dotnet pack -p:Configuration=Release -o artifacts ILAsm.Managed.sln
