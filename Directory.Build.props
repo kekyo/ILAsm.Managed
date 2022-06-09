@@ -19,6 +19,8 @@
     <Product>ILAsm.Managed</Product>
     <Trademark>ILAsm.Managed</Trademark>
     <Copyright>Copyright (c) Kouji Matsui</Copyright>
+    <Description>Portable managed Mono IL assembler.</Description>
+    <PackageTags>ilasm;managed;portable;mono;cil;msil</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <Company>Kouji Matsui (@kozy_kekyo, @kekyo@mastodon.cloud)</Company>

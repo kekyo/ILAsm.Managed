@@ -8,10 +8,10 @@
     <license type="expression">MIT</license>
     <!-- <icon>ILAsm.Managed.100.png</icon> -->
     <projectUrl>https://github.com/kekyo/ILAsm.Managed.git</projectUrl>
-    <description>Portable Mono IL assembler.</description>
+    <description>Portable managed Mono IL assembler.</description>
     <releaseNotes>$PackageReleaseNotes$</releaseNotes>
     <copyright>Copyright (c) Kouji Matsui</copyright>
-    <tags>ilasm managed mono cil msil</tags>
+    <tags>ilasm managed portable mono cil msil</tags>
     <repository type="git" url="https://github.com/kekyo/ILAsm.Managed.git" branch="$RepositoryBranch$" commit="$RepositoryCommit$" />
     <developmentDependency>true</developmentDependency>
   </metadata>

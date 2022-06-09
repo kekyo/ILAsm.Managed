@@ -8,11 +8,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D0A2805B-C8F3-45B7-9E7A-179D061ED610}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		build-nupkg.bat = build-nupkg.bat
+		build-nupkg.sh = build-nupkg.sh
 		Directory.Build.props = Directory.Build.props
 		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILAsm.Managed", "ILAsm.Managed\ILAsm.Managed.csproj", "{02460F37-93DF-4F31-89FB-42C16823F080}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ILAsm.Managed", "ILAsm.Managed\ILAsm.Managed.csproj", "{02460F37-93DF-4F31-89FB-42C16823F080}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

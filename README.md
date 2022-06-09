@@ -1,4 +1,4 @@
-# ILAsm.Managed - Portable Mono IL assembler.
+# ILAsm.Managed - Portable managed Mono IL assembler.
 
 
 
