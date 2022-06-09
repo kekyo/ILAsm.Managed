@@ -1,20 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net40;net45;net48;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net20;net35;net40;net45;net48;netstandard2.0;netstandard2.1;netcoreapp2.2;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
-      
+
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineConstants>$(DefineConstants);CECIL</DefineConstants>
+
     <DebugSymbols>true</DebugSymbols>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NoWarn>$(NoWarn);CS1570;CS1591;NU5105</NoWarn>
+    <NoWarn>$(NoWarn);0618;0414;1591;1587;1570;1572;1573;SYSLIB0003</NoWarn>
       
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/kekyo/ILAsm.Managed.git</RepositoryUrl>
@@ -22,7 +24,7 @@
     <Product>ILAsm.Managed</Product>
     <Trademark>ILAsm.Managed</Trademark>
     <Copyright>Copyright (c) Kouji Matsui</Copyright>
-    <License>MIT</License>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <Company>Kouji Matsui (@kozy_kekyo, @kekyo@mastodon.cloud)</Company>
     <Authors>Kouji Matsui (@kozy_kekyo, @kekyo@mastodon.cloud)</Authors>
@@ -45,7 +47,7 @@
     <PackageReference Include="RelaxVersioner" Version="2.10.0" PrivateAssets="All" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+  <ItemGroup Condition="('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard2.1') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp3.1') OR ('$(TargetFramework)' == 'net5.0') OR ('$(TargetFramework)' == 'net6.0')">
     <PackageReference Include="System.Security.Permissions" Version="4.7.0" />
   </ItemGroup>
 
@@ -60,17 +62,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="..\mono\mcs\ilasm\Main.cs" />
-    <Compile Remove="..\mono\mcs\ilasm\AssemblyInfo.cs" />
-    <Compile Remove="..\mono\mcs\ilasm\tests\**\*.cs" />
+    <Compile Include="ILParser.cs" Link="ilasm\parser\ILParser.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="..\mono\mcs\class\PEAPI\Assembly\AssemblyInfo.cs" />
+    <Compile Remove="..\mono\mcs\ilasm\Main.cs" LinkBase="ilasm" />
+    <Compile Remove="..\mono\mcs\ilasm\AssemblyInfo.cs" LinkBase="ilasm" />
+    <Compile Remove="..\mono\mcs\ilasm\tests\**\*.cs" LinkBase="ilasm" />
+    <Compile Remove="..\mono\mcs\class\PEAPI\Assembly\AssemblyInfo.cs" LinkBase="PEAPI" />
+    <Compile Remove="..\mono\mcs\class\Mono.CompilerServices.SymbolWriter\Assembly\AssemblyInfo.cs" LinkBase="Mono.CompilerServices.SymbolWriter" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="..\mono\mcs\class\Mono.CompilerServices.SymbolWriter\Assembly\AssemblyInfo.cs" />
+    <None Include="..\mono\mcs\ilasm\Main.cs" Visible="false" />
+    <None Include="..\mono\mcs\ilasm\AssemblyInfo.cs" Visible="false" />
+    <None Include="..\mono\mcs\ilasm\tests\**\*.cs" Visible="false" />
+    <None Include="..\mono\mcs\class\PEAPI\Assembly\AssemblyInfo.cs" Visible="false" />
+    <None Include="..\mono\mcs\class\Mono.CompilerServices.SymbolWriter\Assembly\AssemblyInfo.cs" Visible="false" />
+    <None Include="gen_parser.sh" />
   </ItemGroup>
 
 </Project>
