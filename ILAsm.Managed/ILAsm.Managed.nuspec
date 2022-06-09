@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ILAsm.Managed</id>
+    <version>$PackageVersion$</version>
+    <authors>Kouji Matsui (@kozy_kekyo, @kekyo@mastodon.cloud)</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>ILAsm.Managed.100.png</icon> -->
+    <projectUrl>https://github.com/kekyo/ILAsm.Managed.git</projectUrl>
+    <description>Portable Mono IL assembler.</description>
+    <releaseNotes>$PackageReleaseNotes$</releaseNotes>
+    <copyright>Copyright (c) Kouji Matsui</copyright>
+    <tags>ilasm managed mono cil msil</tags>
+    <repository type="git" url="https://github.com/kekyo/ILAsm.Managed.git" branch="$RepositoryBranch$" commit="$RepositoryCommit$" />
+    <developmentDependency>true</developmentDependency>
+  </metadata>
+  <files>
+    <!-- <file src="..\Images\ILAsm.Managed.100.png" target="/" /> -->
+    <file src="build\*.*" target="build" />
+    <file src="buildMultiTargeting\*.*" target="buildMultiTargeting" />
+    <file src="bin\$Configuration$\net20\*.*" target="tools/net20" />
+    <file src="bin\$Configuration$\net40\*.*" target="tools/net40" />
+    <file src="bin\$Configuration$\netcoreapp2.2\*.*" target="tools/netcoreapp2.2" />
+    <file src="bin\$Configuration$\netcoreapp3.1\*.*" target="tools/netcoreapp3.1" />
+    <file src="bin\$Configuration$\net5.0\*.*" target="tools/net5.0" />
+    <file src="bin\$Configuration$\net6.0\*.*" target="tools/net6.0" />
+  </files>
+</package>

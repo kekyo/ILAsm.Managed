@@ -1,0 +1,50 @@
+﻿<!--
+////////////////////////////////////////////////////////////////////
+//
+// ILAsm.Managed - Portable Mono IL assembler.
+// Copyright (c) Sergey Chaban (serge@wildwestsoftware.com)
+// Copyright (c) Jackson Harper (Jackson@LatitudeGeo.com)
+// Copyright (c) Kouji Matsui (@kozy_kekyo, @kekyo@mastodon.cloud)
+//
+// Licensed under MIT: https://opensource.org/licenses/mit
+//
+////////////////////////////////////////////////////////////////////
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Common (internal) -->
+    
+  <PropertyGroup Condition="('$(MSBuildRuntimeType)' == 'Core') AND ('$(MicrosoftNETBuildTasksTFM)' != '')">
+    <_ILAsm_Managed_PlatformName>$(MicrosoftNETBuildTasksTFM)</_ILAsm_Managed_PlatformName>
+  </PropertyGroup>
+  <PropertyGroup Condition="('$(MSBuildRuntimeType)' == 'Core') AND ('$(MicrosoftNETBuildTasksTFM)' == '') AND ('$(BundledNETCoreAppTargetFrameworkVersion)' != '')">
+    <_ILAsm_Managed_PlatformName Condition="$(BundledNETCoreAppTargetFrameworkVersion) &gt;= 5.0">net$(BundledNETCoreAppTargetFrameworkVersion)</_ILAsm_Managed_PlatformName>
+    <_ILAsm_Managed_PlatformName Condition="$(BundledNETCoreAppTargetFrameworkVersion) &lt; 5.0">netcoreapp$(BundledNETCoreAppTargetFrameworkVersion)</_ILAsm_Managed_PlatformName>
+  </PropertyGroup>
+  <PropertyGroup Condition="('$(MSBuildRuntimeType)' == 'Core') AND ('$(MicrosoftNETBuildTasksTFM)' == '') AND ('$(BundledNETCoreAppTargetFrameworkVersion)' == '')">
+    <_ILAsm_Managed_PlatformName>netcoreapp2.2</_ILAsm_Managed_PlatformName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildRuntimeType)' != 'Core'">
+    <_ILAsm_Managed_PlatformName>net40</_ILAsm_Managed_PlatformName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <_ILAsm_Managed_ToolingDir>$([System.IO.Path]::Combine('$(_ILAsm_Managed_ScriptBaseDir)','..','tools','$(_ILAsm_Managed_PlatformName)'))</_ILAsm_Managed_ToolingDir>
+  </PropertyGroup>
+        
+  <!-- ====================================================================== -->
+
+  <!-- Common -->
+
+  <PropertyGroup>
+    <ILAsmManagedBuildToolingRuntimeName Condition="'$(ILAsmManagedBuildToolingRuntimeName)' == ''">$(_ILAsm_Managed_RuntimeName)</ILAsmManagedBuildToolingRuntimeName>
+    <ILAsmManagedBuildToolingDir Condition="'$(ILAsmManagedBuildToolingDir)' == ''">$([System.IO.Path]::GetFullPath('$(_ILAsm_Managed_ToolingDir)'))</ILAsmManagedBuildToolingDir>
+    <ILAsmManagedBuildToolingPath Condition="'$(ILAsmManagedBuildToolingPath)' == ''">$([System.IO.Path]::Combine('$(ILAsmManagedBuildToolingDir)','$(_ILAsm_Managed_ExecutableName)'))</ILAsmManagedBuildToolingPath>
+  </PropertyGroup>
+    
+  <!-- Usage:
+  <Exec WorkingDirectory="$(ILAsmManagedBuildToolingDir)"
+     Command="$(ILAsmManagedBuildToolingRuntimeName)&quot;$(ILAsmManagedBuildToolingPath)&quot; ...." />
+  -->
+
+</Project>

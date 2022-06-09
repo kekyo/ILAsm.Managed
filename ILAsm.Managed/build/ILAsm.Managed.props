@@ -1,0 +1,33 @@
+﻿<!--
+////////////////////////////////////////////////////////////////////
+//
+// ILAsm.Managed - Portable Mono IL assembler.
+// Copyright (c) Sergey Chaban (serge@wildwestsoftware.com)
+// Copyright (c) Jackson Harper (Jackson@LatitudeGeo.com)
+// Copyright (c) Kouji Matsui (@kozy_kekyo, @kekyo@mastodon.cloud)
+//
+// Licensed under MIT: https://opensource.org/licenses/mit
+//
+////////////////////////////////////////////////////////////////////
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup Condition="'$(MSBuildRuntimeType)' == 'Core'">
+    <_ILAsm_Managed_RuntimeName>dotnet </_ILAsm_Managed_RuntimeName>
+    <_ILAsm_Managed_ExecutableName>ilasm.dll</_ILAsm_Managed_ExecutableName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildRuntimeType)' == 'Full'">
+    <_ILAsm_Managed_RuntimeName></_ILAsm_Managed_RuntimeName>
+    <_ILAsm_Managed_ExecutableName>ilasm.exe</_ILAsm_Managed_ExecutableName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildRuntimeType)' == 'Mono'">
+    <_ILAsm_Managed_RuntimeName>mono </_ILAsm_Managed_RuntimeName>
+    <_ILAsm_Managed_ExecutableName>ilasm.exe</_ILAsm_Managed_ExecutableName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <_ILAsm_Managed_ScriptBaseDir>$(MSBuildThisFileDirectory)</_ILAsm_Managed_ScriptBaseDir>
+    <ILAsmManagedBuildEnable>True</ILAsmManagedBuildEnable>
+  </PropertyGroup>
+
+</Project>
