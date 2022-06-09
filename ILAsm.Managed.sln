@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE = LICENSE
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILAsm.Managed", "ILAsm.Managed\ILAsm.Managed.csproj", "{02460F37-93DF-4F31-89FB-42C16823F080}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{ED384E9E-56E1-4AEB-B92B-7E270425D70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED384E9E-56E1-4AEB-B92B-7E270425D70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED384E9E-56E1-4AEB-B92B-7E270425D70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02460F37-93DF-4F31-89FB-42C16823F080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02460F37-93DF-4F31-89FB-42C16823F080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02460F37-93DF-4F31-89FB-42C16823F080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02460F37-93DF-4F31-89FB-42C16823F080}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

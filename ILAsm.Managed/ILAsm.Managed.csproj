@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;netcoreapp2.2;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+
+    <AssemblyName>ilasm</AssemblyName>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+
+    <NoWarn>$(NoWarn);1591;1587;1570;1572;1573</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ILAsm.Managed.Core\ILAsm.Managed.Core.csproj" />
+  </ItemGroup>
+
+</Project>
