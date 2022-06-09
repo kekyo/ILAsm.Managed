@@ -7,6 +7,8 @@ Portable managed Mono IL assembler.
 * [![NuGet ILAsm.Managed](https://img.shields.io/nuget/v/ILAsm.Managed.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed)
 * [![NuGet ILAsm.Managed.Core](https://img.shields.io/nuget/v/ILAsm.Managed.Core.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed.Core)
 
+----
+
 ## What is this?
 
 Mono IL assembler exactly ported to .NET, .NET Core and .NET Frameworks.
@@ -22,6 +24,8 @@ There are two packages for this project, which can be used for different purpose
 
 * [`ILAsm.Managed`](): Contains ported Mono ilasm executable (CLI interface).
 * [`ILAsm.Managed.Core`](): Pure library for ported Mono ilasm.
+
+----
 
 ## ILAsm.Managed
 
@@ -52,6 +56,8 @@ ilasm [options] source-files
 Options can be of the form -option or /option
 ```
 
+----
+
 ## ILAsm.Managed.Core
 
 This library contains up to just before the `Main` entry point.
@@ -69,6 +75,31 @@ public static class Program
         Driver.Main(args);
 }
 ```
+
+----
+
+## Background
+
+This is a further derivative project of [IL2C](https://github.com/kekyo/IL2C) and [ILCompose](https://github.com/kekyo/ILCompose).
+In fact, the original authors are to be commended, as they simply ported the Mono ilasm artifact to a modern environment.
+
+Currently (.NET 6), Microsoft's CoreCLR team is working on a port of the .NET Framework's ILAsm,
+[Microsoft.NETCore.ILAsm](https://www.nuget.org/packages/Microsoft.NETCore.ILAsm) and a set of derivative packages.
+These include native binaries, i.e., binaries specific to Windows and Linux (different for each distribution).
+
+There are [SDK scripts for IL](https://www.nuget.org/packages/Microsoft.NET.Sdk.IL) that reference these packages from the `<PackageReference>` tag.
+However, there is a fatal problem with this method.
+Commands such as `dotnet restore` and `nuget restore` do not evaluate the MSBuild scripts when resolving package references.
+Therefore, this package reference actually fails and the build always fails.
+
+No, if you build from Visual Studio, you can build.
+So I finally discovered this problem by failing to build with GitHub Actions.
+I thought of various solutions, but in the end, as long as ILAsm is native code,
+it is difficult (at least to an outsider) to fundamentally solve this problem.
+
+So we looked into Mono's ILAsm and found that it was fully managed code, albeit clunky, so we decided to port it.
+
+----
 
 ## License
 
