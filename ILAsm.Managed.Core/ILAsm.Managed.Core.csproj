@@ -1,7 +1,76 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net40;net45;net48;netstandard2.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+      
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NoWarn>$(NoWarn);CS1570;CS1591;NU5105</NoWarn>
+      
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/kekyo/ILAsm.Managed.git</RepositoryUrl>
+      
+    <Product>ILAsm.Managed</Product>
+    <Trademark>ILAsm.Managed</Trademark>
+    <Copyright>Copyright (c) Kouji Matsui</Copyright>
+    <License>MIT</License>
+
+    <Company>Kouji Matsui (@kozy_kekyo, @kekyo@mastodon.cloud)</Company>
+    <Authors>Kouji Matsui (@kozy_kekyo, @kekyo@mastodon.cloud)</Authors>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' != 'Release'">
+    <DebugType>portable</DebugType>
+    <EmbedUntrackedSources>false</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild>false</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>embedded</DebugType>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="All" />
+    <PackageReference Include="RelaxVersioner" Version="2.10.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Security.Permissions" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\mono\mcs\ilasm\**\*.cs" LinkBase="ilasm" />
+    <Compile Include="..\mono\mcs\class\PEAPI\**\*.cs" LinkBase="PEAPI" />
+    <Compile Include="..\mono\mcs\class\Mono.CompilerServices.SymbolWriter\**\*.cs" LinkBase="Mono.CompilerServices.SymbolWriter" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="..\mono\mcs\ilasm\Main.cs" />
+    <Compile Remove="..\mono\mcs\ilasm\AssemblyInfo.cs" />
+    <Compile Remove="..\mono\mcs\ilasm\tests\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="..\mono\mcs\class\PEAPI\Assembly\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="..\mono\mcs\class\Mono.CompilerServices.SymbolWriter\Assembly\AssemblyInfo.cs" />
+  </ItemGroup>
 
 </Project>
