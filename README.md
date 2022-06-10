@@ -2,7 +2,7 @@
 
 Portable managed Mono IL assembler.
 
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: WIP ï¿½ Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 | ILAsm.Managed | ILAsm.Managed.Core |
 |:----|:----|
@@ -23,20 +23,19 @@ Target platforms:
 
 There are two packages for this project, which can be used for different purposes:
 
-* [`ILAsm.Managed`](): Contains ported Mono ilasm executable (CLI interface).
-* [`ILAsm.Managed.Core`](): Pure library for ported Mono ilasm.
+* [ILAsm.Managed](https://www.nuget.org/packages/ILAsm.Managed): Contains ported Mono ilasm executable (CLI interface).
+* [ILAsm.Managed.Core](https://www.nuget.org/packages/ILAsm.Managed.Core): Pure library for ported Mono ilasm.
 
 ----
 
 ## ILAsm.Managed
 
 You can refer to MSBuild symbols as properties.
-Using this property, you can easily run the CLI interface in a multi-platform environment:
+Using this property, you can easily run the CLI interface in safer multi-platform environment:
 
 ```xml
 <!-- Execute Mono ilasm CLI -->
-<Exec WorkingDirectory="$(ILAsmManagedBuildToolingDir)"
-    Command="$(ILAsmManagedBuildToolingRuntimeName)&quot;$(ILAsmManagedBuildToolingPath)&quot; ...." />
+<Exec Command="$(ILAsmManagedBuildToolingRuntimeName)&quot;$(ILAsmManagedBuildToolingPath)&quot; ...." />
 ```
 
 For those of you who can't be bothered to look it up, here is some help on Mono ilasm CLI:
