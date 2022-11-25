@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net20;net40;netcoreapp2.2;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net20;net40;netcoreapp2.2;netcoreapp3.1;net5.0;net6.0;net7.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
 
     <AssemblyName>ilasm</AssemblyName>
@@ -9,10 +9,15 @@
     <NuSpecFile>ILAsm.Managed.nuspec</NuSpecFile>
 
     <NoWarn>$(NoWarn);1591;1587;1570;1572;1573</NoWarn>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ILAsm.Managed.Core\ILAsm.Managed.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Images\ILAsm.Managed.100.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
