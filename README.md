@@ -6,9 +6,11 @@ Portable managed Mono IL assembler.
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-| ILAsm.Managed | ILAsm.Managed.Core |
+| Package name | nuget.org |
 |:----|:----|
-| [![NuGet ILAsm.Managed](https://img.shields.io/nuget/v/ILAsm.Managed.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed) | [![NuGet ILAsm.Managed.Core](https://img.shields.io/nuget/v/ILAsm.Managed.Core.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed.Core) |
+| ilasm-cli | [![NuGet ilasm-cli](https://img.shields.io/nuget/v/ilasm-cli.svg?style=flat)](https://www.nuget.org/packages/ilasm-cli) |
+| ILAsm.Managed | [![NuGet ILAsm.Managed](https://img.shields.io/nuget/v/ILAsm.Managed.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed) |
+| ILAsm.Managed.Core | [![NuGet ILAsm.Managed.Core](https://img.shields.io/nuget/v/ILAsm.Managed.Core.svg?style=flat)](https://www.nuget.org/packages/ILAsm.Managed.Core) |
 
 ----
 
