@@ -29,7 +29,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <_ILAsm_Managed_ToolingDir>$([System.IO.Path]::Combine('$(_ILAsm_Managed_ScriptBaseDir)','..','tools','$(_ILAsm_Managed_PlatformName)','any'))</_ILAsm_Managed_ToolingDir>
+    <_ILAsm_Managed_ToolingDir>$([System.IO.Path]::Combine('$(_ILAsm_Managed_ScriptBaseDir)','..','tools','$(_ILAsm_Managed_PlatformName)'))</_ILAsm_Managed_ToolingDir>
   </PropertyGroup>
         
   <!-- ====================================================================== -->

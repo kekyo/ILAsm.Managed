@@ -25,15 +25,35 @@ Target platforms:
 
 There are two packages for this project, which can be used for different purposes:
 
-* [ILAsm.Managed](https://www.nuget.org/packages/ILAsm.Managed): Contains ported Mono ilasm executable (CLI interface).
+* [ILAsm.Managed](https://www.nuget.org/packages/ILAsm.Managed): Contains ported Mono ilasm executable.
 * [ILAsm.Managed.Core](https://www.nuget.org/packages/ILAsm.Managed.Core): Pure library for ported Mono ilasm.
+* [ilasm-cli](https://www.nuget.org/packages/ILAsm.Managed): Contains ported Mono ilasm executable (dotnet cli interface).
+
+
+----
+
+## ilasm-cli
+
+ilasm-cli package suppors dotnet cli interface.
+Try simply installation when you want to get ILAsm on the cli as follows:
+
+```bash
+C:\>dotnet tool install -g ilasm-cli
+You can invoke the tool using the following command: ilasm
+Tool 'ilasm-cli' (version '1.1.0') was successfully installed.
+
+C:\>ilasm
+Mono IL assembler compiler
+   :
+   :
+```
 
 ----
 
 ## ILAsm.Managed
 
 You can refer to MSBuild symbols as properties.
-Using this property, you can easily run the CLI interface in safer multi-platform environment:
+Using this property, you can easily run the command in safer multi-platform environment:
 
 ```xml
 <!-- Execute Mono ilasm CLI -->
@@ -106,3 +126,12 @@ So we looked into Mono's ILAsm and found that it was fully managed code, albeit 
 ## License
 
 Under MIT excepts original Mono source code, [see Mono License](https://github.com/mono/mono/blob/main/LICENSE).
+
+----
+
+## History
+
+* 1.1.0:
+  * Supported dotnet cli installation.
+* 1.0.0:
+  * Initial release.
