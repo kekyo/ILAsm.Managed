@@ -14,6 +14,9 @@
     <tags>ilasm managed portable mono cil msil</tags>
     <repository type="git" url="https://github.com/kekyo/ILAsm.Managed.git" branch="$RepositoryBranch$" commit="$RepositoryCommit$" />
     <developmentDependency>true</developmentDependency>
+    <packageTypes>
+      <packageType name="DotnetTool" />
+    </packageTypes>
   </metadata>
   <files>
     <file src="..\Images\ILAsm.Managed.100.png" target="/" />
