@@ -2,7 +2,7 @@
 
 ![ILAsm.Managed](Images/ILAsm.Managed.100.png)
 
-Portable managed Mono IL assembler.
+Portable managed Mono CIL assembler.
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
@@ -16,7 +16,7 @@ Portable managed Mono IL assembler.
 
 ## What is this?
 
-Mono IL assembler exactly ported to .NET, .NET Core and .NET Frameworks.
+Mono CIL assembler exactly ported to .NET, .NET Core and .NET Frameworks.
 
 Target platforms:
 
@@ -27,7 +27,7 @@ Target platforms:
 
 There are two packages for this project, which can be used for different purposes:
 
-* [ilasm-cli](https://www.nuget.org/packages/ilasm-cli): Contains ported Mono ilasm executable (dotnet cli interface).
+* [ilasm-cli](https://www.nuget.org/packages/ilasm-cli): Contains ported Mono ilasm executable (dotnet CLI interface).
 * [ILAsm.Managed](https://www.nuget.org/packages/ILAsm.Managed): Contains ported Mono ilasm executable (MSBuild scripting).
 * [ILAsm.Managed.Core](https://www.nuget.org/packages/ILAsm.Managed.Core): Pure library for ported Mono ilasm.
 
@@ -36,7 +36,7 @@ There are two packages for this project, which can be used for different purpose
 
 ## ilasm-cli
 
-[ilasm-cli package](https://www.nuget.org/packages/ilasm-cli) suppors dotnet cli interface.
+[ilasm-cli package](https://www.nuget.org/packages/ilasm-cli) suppors dotnet CLI interface.
 Try simply installation when you want to get ILAsm on the cli as follows:
 
 ```bash
@@ -45,27 +45,6 @@ You can invoke the tool using the following command: ilasm
 Tool 'ilasm-cli' (version '1.1.0') was successfully installed.
 
 C:\>ilasm
-Mono IL assembler compiler
-   :
-   :
-```
-
-----
-
-## ILAsm.Managed
-
-You can refer to MSBuild symbols as properties with [ILAsm.Managed package](https://www.nuget.org/packages/ILAsm.Managed).
-Using this property, you can easily run the command in safer multi-platform environment:
-
-```xml
-<!-- Execute Mono ilasm CLI -->
-<Exec Command="$(ILAsmManagedBuildToolingRuntimeName)&quot;$(ILAsmManagedBuildToolingPath)&quot; ...." />
-```
-
-For those of you who can't be bothered to look it up, here is some help on Mono ilasm CLI:
-
-```
-C:\Projects\ILAsm.Managed\ILAsm.Managed\bin\Debug\net40>ilasm.exe
 Mono IL assembler compiler
 ilasm [options] source-files
    --about            About the Mono IL assembler compiler
@@ -78,6 +57,18 @@ ilasm [options] source-files
    /key:@container    Strongname using the specified key container
    /noautoinherit     Disable inheriting from System.Object by default
 Options can be of the form -option or /option
+```
+
+----
+
+## ILAsm.Managed
+
+You can refer to MSBuild symbols as properties with [ILAsm.Managed package](https://www.nuget.org/packages/ILAsm.Managed).
+Using this property, you can easily run the command in safer multi-platform environment:
+
+```xml
+<!-- Execute Mono ilasm CLI -->
+<Exec Command="$(ILAsmManagedBuildToolingRuntimeName)&quot;$(ILAsmManagedBuildToolingPath)&quot; ...." />
 ```
 
 ----
@@ -134,6 +125,6 @@ Under MIT excepts original Mono source code, [see Mono License](https://github.c
 ## History
 
 * 1.1.0:
-  * Supported dotnet cli installation.
+  * Supported dotnet CLI installation.
 * 1.0.0:
   * Initial release.
