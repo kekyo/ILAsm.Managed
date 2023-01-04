@@ -25,15 +25,35 @@ Target platforms:
 
 There are two packages for this project, which can be used for different purposes:
 
-* [ILAsm.Managed](https://www.nuget.org/packages/ILAsm.Managed): Contains ported Mono ilasm executable (CLI interface).
+* [ilasm-cli](https://www.nuget.org/packages/ilasm-cli): Contains ported Mono ilasm executable (dotnet cli interface).
+* [ILAsm.Managed](https://www.nuget.org/packages/ILAsm.Managed): Contains ported Mono ilasm executable (MSBuild scripting).
 * [ILAsm.Managed.Core](https://www.nuget.org/packages/ILAsm.Managed.Core): Pure library for ported Mono ilasm.
+
+
+----
+
+## ilasm-cli
+
+[ilasm-cli package](https://www.nuget.org/packages/ilasm-cli) suppors dotnet cli interface.
+Try simply installation when you want to get ILAsm on the cli as follows:
+
+```bash
+C:\>dotnet tool install -g ilasm-cli
+You can invoke the tool using the following command: ilasm
+Tool 'ilasm-cli' (version '1.1.0') was successfully installed.
+
+C:\>ilasm
+Mono IL assembler compiler
+   :
+   :
+```
 
 ----
 
 ## ILAsm.Managed
 
-You can refer to MSBuild symbols as properties.
-Using this property, you can easily run the CLI interface in safer multi-platform environment:
+You can refer to MSBuild symbols as properties with [ILAsm.Managed package](https://www.nuget.org/packages/ILAsm.Managed).
+Using this property, you can easily run the command in safer multi-platform environment:
 
 ```xml
 <!-- Execute Mono ilasm CLI -->
@@ -62,7 +82,7 @@ Options can be of the form -option or /option
 
 ## ILAsm.Managed.Core
 
-This library contains up to just before the `Main` entry point.
+This package contains up to just before the `Main` entry point.
 It can be used directly in MSBuild custom tasks or when incorporating ILAsm into your own implementation.
 However, since the original implementation is made into a library as is, it may not be easy to handle.
 
@@ -106,3 +126,12 @@ So we looked into Mono's ILAsm and found that it was fully managed code, albeit 
 ## License
 
 Under MIT excepts original Mono source code, [see Mono License](https://github.com/mono/mono/blob/main/LICENSE).
+
+----
+
+## History
+
+* 1.1.0:
+  * Supported dotnet cli installation.
+* 1.0.0:
+  * Initial release.

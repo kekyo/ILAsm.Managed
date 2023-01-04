@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ILAsm.Managed", "ILAsm.Managed\ILAsm.Managed.csproj", "{02460F37-93DF-4F31-89FB-42C16823F080}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ilasm-cli", "ilasm-cli\ilasm-cli.csproj", "{52E0932E-7BCB-48E9-8D43-56A2BCEB8942}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{02460F37-93DF-4F31-89FB-42C16823F080}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02460F37-93DF-4F31-89FB-42C16823F080}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02460F37-93DF-4F31-89FB-42C16823F080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E0932E-7BCB-48E9-8D43-56A2BCEB8942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E0932E-7BCB-48E9-8D43-56A2BCEB8942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E0932E-7BCB-48E9-8D43-56A2BCEB8942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E0932E-7BCB-48E9-8D43-56A2BCEB8942}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
