@@ -124,6 +124,8 @@ Under MIT excepts original Mono source code, [see Mono License](https://github.c
 
 ## History
 
+* 1.2.0:
+  * Supported .NET 8.0 SDK.
 * 1.1.9:
   * Supported .NET 8.0 RC2.
 * 1.1.0:
